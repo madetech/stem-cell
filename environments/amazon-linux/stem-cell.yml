@@ -18,5 +18,6 @@
   become_user: root
   become_method: sudo
   roles:
+    - ontic.git
     - geerlingguy.ansible
     - stem-cell
