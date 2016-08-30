@@ -18,13 +18,13 @@ To provision a generic AMI that can be used as the basis for numerous specific r
 1. In your infrastructure repository, create a main.yml file in the root
 2. When creating your EC2 instance provide a JSON object as user-data. Provide an OAuth token (optional) for private repositories.
 
-```json
-{
-  "version_control_url":"https://github.com/madetech/your-private-repo-here.git",
-  "version_control_token":"xxx"
-}
-```
-
+    ```json
+    {
+      "version_control_url":"https://github.com/madetech/your-private-repo-here.git",
+      "version_control_token":"xxx"
+    }
+    ```
+    
 3. Stem cell will clone the repo and execute the main.yml with ansible
 
 ### Example main.yml
