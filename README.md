@@ -4,6 +4,8 @@
 
 To provision a generic AMI that can be used as the basis for numerous specific roles.
 
+Primary purpose is for use in auto-scaling group launch configurations, where we do not wish hampered by the turn around time of AMI creation. 
+
 ## Usage
 
 ### Creating the stem cell image
