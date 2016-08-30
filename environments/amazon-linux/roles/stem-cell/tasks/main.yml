@@ -8,3 +8,5 @@
 - name: Copy stem_cell python application
   copy: src=../../../../stem_cell/ dest=/opt/stem_cell/ owner=root group=root mode=0751
 
+- name: Enable stem-cell service
+  service: name=stem-cell-differentiate enabled=yes

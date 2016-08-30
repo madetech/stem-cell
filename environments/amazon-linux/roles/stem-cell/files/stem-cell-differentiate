@@ -1,3 +1,5 @@
 #!/usr/bin/env sh
+# chkconfig: 345 99 01
+# description: stem cell init.d script
 
 python /opt/stem_cell/main.py
