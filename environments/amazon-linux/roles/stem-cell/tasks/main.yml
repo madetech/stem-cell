@@ -1,4 +1,7 @@
 ---
+- name: Update AMI yum packages to latest
+  yum: name=* state=latest
+
 - name: Ensure yum-python26 is installed
   yum: name=yum-python26 state=present
 
