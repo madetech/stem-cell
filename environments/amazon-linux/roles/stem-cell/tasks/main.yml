@@ -1,4 +1,7 @@
 ---
+- name: Ensure yum-python26 is installed
+  yum: name=yum-python26 state=present
+
 - name: Copy init.d script for stem-cell-differentiate
   copy: src=files/stem-cell-differentiate dest=/etc/init.d/stem-cell-differentiate owner=root group=root mode=0751
 
