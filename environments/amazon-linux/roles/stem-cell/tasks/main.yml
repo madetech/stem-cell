@@ -14,5 +14,11 @@
 - name: Copy stem_cell python application
   copy: src=../../../../stem_cell/ dest=/opt/stem_cell/ owner=root group=root mode=0751
 
+- name: Disable strict key checking for github.com
+  copy: src=files/ssh/config dest=/root/.ssh/config owner=root group=root mode=0400
+
+- name: Copy ssh-git wrapper script
+  copy: src=files/ssh-git.sh dest=/opt/ssh-git.sh owner=root group=root mode=751
+
 - name: Enable stem-cell service
   service: name=stem-cell-differentiate enabled=yes

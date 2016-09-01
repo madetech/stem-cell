@@ -18,16 +18,36 @@ Primary purpose is for use in auto-scaling group launch configurations, where we
 ### Using your stem cell AMI
 
 1. In your infrastructure repository, create a main.yml file in the root
-2. When creating your EC2 instance provide a JSON object as user-data. Provide an OAuth token (optional) for private repositories.
+2. When creating your EC2 instance provide a JSON object as user-data. 
 
     ```json
     {
-      "version_control_url":"https://github.com/madetech/your-private-repo-here.git",
-      "version_control_token":"xxx"
+      "version_control_url":"https://github.com/madetech/your-private-repo-here.git"
     }
     ```
     
 3. Stem cell will clone the repo and execute the main.yml with ansible
+
+### Authentication (optional)
+
+Stem Cell provides two options for authentication
+
+* SSH private key (preferred)
+    ```json
+        {
+          "version_control_url":"git@github.com:madetech/your-private-repo-here.git",
+          "version_control_private_key":"-----BEGIN RSA PRIVATE KEY-----\nxxx\n-----END RSA PRIVATE KEY-----"
+        }
+    ```
+    
+* OAuth token
+    ```json
+        {
+          "version_control_url":"https://github.com/madetech/your-private-repo-here.git",
+          "version_control_token":"xxx"
+        }
+    ```
+    
 
 ### Example main.yml
 
