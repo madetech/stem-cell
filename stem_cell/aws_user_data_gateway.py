@@ -8,16 +8,16 @@ class AwsUserDataGateway:
 
     @property
     def version_control_url(self):
-        return self.user_data['version_control_url']
+        return self.user_data['target_ansible_package']
 
     @property
     def version_control_token(self):
         if 'version_control_token' not in self.user_data:
             return False
-        return self.user_data['version_control_token']
+        return self.user_data['git_repository_authentication_token']
 
     @property
     def version_control_private_key(self):
         if 'version_control_private_key' not in self.user_data:
             return False
-        return self.user_data['version_control_private_key']
+        return self.user_data['git_repository_private_key']

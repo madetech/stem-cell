@@ -22,7 +22,7 @@ Primary purpose is for use in auto-scaling group launch configurations, where we
 
     ```json
     {
-      "version_control_url":"https://github.com/madetech/your-private-repo-here.git"
+      "target_ansible_package":"https://github.com/madetech/your-private-repo-here.git"
     }
     ```
     
@@ -35,16 +35,16 @@ Stem Cell provides two options for authentication
 * SSH private key (preferred)
     ```json
         {
-          "version_control_url":"git@github.com:madetech/your-private-repo-here.git",
-          "version_control_private_key":"-----BEGIN RSA PRIVATE KEY-----\nxxx\n-----END RSA PRIVATE KEY-----"
+          "target_ansible_package":"git@github.com:madetech/your-private-repo-here.git",
+          "git_repository_private_key":"-----BEGIN RSA PRIVATE KEY-----\nxxx\n-----END RSA PRIVATE KEY-----"
         }
     ```
     
 * OAuth token
     ```json
         {
-          "version_control_url":"https://github.com/madetech/your-private-repo-here.git",
-          "version_control_token":"xxx"
+          "target_ansible_package":"https://github.com/madetech/your-private-repo-here.git",
+          "git_repository_authentication_token":"xxx"
         }
     ```
     
