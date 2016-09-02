@@ -3,6 +3,9 @@ import json
 
 
 class AwsUserDataGateway:
+    AUTHENTICATION_TOKEN_CONFIG_KEY = 'git_repository_authentication_token'
+    PRIVATE_KEY_CONFIG_KEY = 'git_repository_private_key'
+
     def __init__(self):
         self.user_data = json.loads(urllib2.urlopen("http://169.254.169.254/latest/user-data").read())
 
@@ -12,12 +15,12 @@ class AwsUserDataGateway:
 
     @property
     def version_control_token(self):
-        if 'version_control_token' not in self.user_data:
+        if self.AUTHENTICATION_TOKEN_CONFIG_KEY not in self.user_data:
             return False
-        return self.user_data['git_repository_authentication_token']
+        return self.user_data[self.AUTHENTICATION_TOKEN_CONFIG_KEY]
 
     @property
     def version_control_private_key(self):
-        if 'version_control_private_key' not in self.user_data:
+        if self.PRIVATE_KEY_CONFIG_KEY not in self.user_data:
             return False
-        return self.user_data['git_repository_private_key']
+        return self.user_data[self.PRIVATE_KEY_CONFIG_KEY]
