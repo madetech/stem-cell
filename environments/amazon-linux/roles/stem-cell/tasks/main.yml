@@ -8,6 +8,12 @@
 - name: Copy init.d script for stem-cell-differentiate
   copy: src=files/stem-cell-differentiate dest=/etc/init.d/stem-cell-differentiate owner=root group=root mode=0751
 
+- name: Copy the stem-cell-variable script into /usr/local/bin
+  copy: src=files/stem-cell-variable dest=/usr/local/bin owner=root group=root mode=0755
+
+- name: Symlink stem-cell-variable
+  file: src=/usr/local/bin/stem-cell-variable dest=/usr/bin/stem-cell-variable state=link
+
 - name: Make directory for stem cell
   file: path=/opt/stem_cell state=directory owner=root group=root mode=0775
 
